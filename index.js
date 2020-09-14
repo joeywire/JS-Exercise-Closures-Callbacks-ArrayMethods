@@ -28,10 +28,17 @@ function processFirstItem(stringList, callback) {
  * 
  * 1. What is the difference between counter1 and counter2?
  * 
+ * Counter one creates count within the higher order function (counter maker), to be used for counter via closure. Counter two creates a global count variable. 
+ * 
  * 2. Which of the two uses a closure? How can you tell?
+ * 
+ * Count1 uses a clouser. The varaible count is declared in the higher order function. 
  * 
  * 3. In what scenario would the counter1 code be preferable? In what scenario would counter2 be better? 
  *
+ * counter1 would be preferable if we wanted to create and track multiple instances of counterMaker. 
+ * counter2 would be preferable if we wanted to take the count variable and reference/ change it in other functions later in our program. 
+ * 
 */
 
 // counter1 code
