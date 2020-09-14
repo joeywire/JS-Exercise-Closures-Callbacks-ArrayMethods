@@ -42,6 +42,9 @@ Find the file `index.js` and complete the tasks until your tests are passing.
 Edit the `ReadMe` file with your answers.
 
 1. In your own words, define closure (1-2 sentences).
+
+Closure occurs when we have nested functions and it dictates that functions nested within other functions have access to the variables created within its parent function/ functions even after those functions have been terminated. So we can continue to reference and update variables without creating them with global scope. This only works 'upstream' a function can look outside itself for a variable but not within/ 'downstream'.
+
 2. Study the following code, then answer the questions below.
 
 ```js
@@ -63,8 +66,16 @@ dansRoll();
 ```
 
 a. Where is closure used in this code? How can you tell?
+
+  Closure is seen in the name parameter, it only has to be assigned once in the function expression. Then it lives on in later iterations of dansRoll()
+
 b. Compare and contrast calling `dansRoll` the first and second time. What is always the same? What could change?
+
+The name 'Dan' is always the same, the value of newRoll can change each time. 
+
 c. What is the lexical scope of `newRoll`? 
+
+'newRoll' belongs/ is scoped within personalDice().
 
 ### Task 3 - Stretch Goals
 
