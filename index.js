@@ -93,7 +93,7 @@ function finalScore(scoreFunc, numInning){
   let homeScore = 0; 
   let awayScore = 0; 
   for(let i = 0; i < numInning; i++){
-    homeScore += scoreFunc(0, 2);
+    homeScore = homeScore + scoreFunc(0, 2);
     awayScore += scoreFunc(0, 2);
   }
   let result = "Home: " + homeScore + " Away: " + awayScore; 
@@ -125,14 +125,16 @@ and returns the score at each pont in the game, like so:
 
 Final Score: awayTeam - homeTeam */
 
-function getInningScore(homeS, awayS, inning){
-  return `(${inning}) inning: ${awayS} - ${homeS}`;
+
+
+function getInningScore(homeS, awayS, inningNum){
+  return `${inningNum}: ${awayS} - ${homeS}`;
 }
 
-function scoreboard(func1, func2, innings) {
+function scoreboard(func1, func2, numInnings){
   let homeScore = 0; 
   let awayScore = 0;
-  for(let i = 0; i < innings; i++){
+  for(let i = 0; i < numInnings; i++){
     homeScore += func2(0, 2);
     awayScore += func2(0, 2); 
     console.log(func1(homeScore, awayScore, i + 1));
@@ -143,12 +145,4 @@ function scoreboard(func1, func2, innings) {
 
 console.log(scoreboard(getInningScore, inning, 9));
 
-/* 
-1. Scoreboard that takes 2 x callback functions 'getInningScore' and 'inning' and 1 x parameter for number of innings 
-2. Create getInningScore so it takes the score from the previous inning and returns the score at each inning
-3. Create variables for home and away score to track across the innings 
-4. return final score afte all teh inning have been playe 
 
-
-
-*/
